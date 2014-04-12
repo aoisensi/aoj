@@ -1,16 +1,23 @@
 #include <iostream>
-#include <array>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
-	int i, n, m;
-	array<int, 100> l;
+	int i, n;
 	cin >> n;
-	for(; i<n; i++)
-		cin >> l[n];
-	for(; i>0; i--)
-		cout << l[i] << ' ';
-	cout << l[0] << endl;
+	vector<int> a(n);
+	for(; i < n; i++)
+		cin >> a[i];
+	reverse(a.begin(), a.end());
+	i = 0;
+	while(true) {
+		cout << a[i];
+		if((n - i) == 1) break;
+		cout << ' ';
+		i++;
+	}
+	cout << endl;
 	return 0;
 }
